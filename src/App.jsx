@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Footer from "./components/Footer";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -95,7 +96,7 @@ const App = () => {
 
   return (
     <div
-      className={`flex items-center justify-center min-h-screen transition-colors duration-500 ${
+      className={`flex flex-col sm:flex-row items-center justify-center min-h-screen gap-6 transition-colors duration-500 ${
         darkMode
           ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black"
           : "bg-gradient-to-br from-gray-200 via-gray-100 to-white"
@@ -201,6 +202,9 @@ const App = () => {
             </button>
           ))}
         </div>
+      </div>
+      <div className="hidden sm:block w-64">
+        <Footer darkMode={darkMode} />
       </div>
     </div>
   );
